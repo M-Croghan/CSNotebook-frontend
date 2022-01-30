@@ -3,6 +3,77 @@
     grid-row: 2;
 }
 
-h1{
-    color: red;
+#about-container{
+    display: grid;
+    grid-row: 2;
+    width: 85vw;
+    
 }
+
+#about-box{
+    background-color: #00A676;
+    padding: 5px;
+    
+}
+
+#about-text{
+    background-color: #1B1E24;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 20% 80%;
+}
+h1{
+    color: white;
+    margin: 0;
+}
+
+#left-img{
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    
+}
+
+#title{
+    grid-row: 1;
+    grid-column: 2;
+    display: grid;
+    place-items: center;
+}
+
+#title-img{
+    width: 30%;
+}
+
+#right-img{
+    grid-column: 3;
+    grid-row: 1;
+    display: grid;
+    justify-items: right;
+}
+
+.logo{
+    width: 45%;
+    padding: 10px;
+}
+
+#info-text{
+    display: grid;
+    grid-column: 1 / 4;
+    grid-row: 2;
+    grid-template-columns: 20% 60% 20%;
+    place-items: center;
+    padding-bottom: 45px;
+}
+
+#text{
+    text-align: center;
+    font-size: 2em;
+    color: #faf2c7;
+    display: grid;
+    grid-row: 1;
+    grid-column: 2;
+}
+
+
+  
