@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent
+    component: HomeComponent
   },
   {
     path: 'about',
@@ -15,7 +16,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    onSameUrlNavigation: 'reload'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
