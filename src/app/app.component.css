@@ -1,0 +1,63 @@
+:host{
+    display: grid;
+    place-items: center;
+    grid-template-rows: 30vh 70vh;
+}
+
+.nav-links{
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2,50vw);
+}
+.logo{
+    width: 80%;
+    display: grid;
+    grid-column: 1/2;
+}
+
+.img-links{
+    width: 75%;
+    
+}
+
+#logo-link{
+    display: grid;
+    grid-column: 1;
+}
+
+#login-link{
+display: grid;
+place-items: center;
+}
+
+#login{
+    width: 30%;
+}
+
+#study{
+    width: 80%
+}
+
+#explore{
+    width: 90%;
+    display:grid;
+    place-items: center;
+}
+
+#img-links{
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    align-items: center;
+    justify-items: right;
+}
+
+#menu-container{
+    display: grid;
+    grid-row: 2;
+    place-items: center;
+}
+
+#menu{
+    display: grid;
+    place-items: center;
+}
