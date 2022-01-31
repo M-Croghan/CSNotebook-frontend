@@ -1,6 +1,7 @@
 :host{
     display: grid;
     grid-row: 2;
+    
 }
 
 h1{
@@ -15,5 +16,42 @@ h1{
     background-color: #1B1E24;
     border: 5px solid #00A676;
     /* LAYOUT */
-    grid-template-columns: ;
+    grid-template-columns: 15% 85%;
+    grid-template-rows: 35% 65%;
 }
+
+#image{
+    display: grid;
+    grid-row: 1;
+    grid-column: 1;
+    place-items: center;
+    text-align: center;
+}
+
+#menu{
+    display: grid;
+    grid-row: 2;
+    grid-column: 1;
+    place-items: center;
+}
+
+#topics{
+    display: grid;
+    grid-row: 1;
+    grid-column: 2;
+}
+
+#empty{
+    display: grid;
+    grid-row: 2;
+    grid-column: 2;
+}
+
+img{
+    width: 75%;
+    margin-left: 30px;
+}
+
+
+
+
