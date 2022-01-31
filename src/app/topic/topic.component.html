@@ -1,1 +1,6 @@
-<h1 class="slide-in-bck-center">TEST</h1>
+
+
+<span *ngFor="topic of topics; let i = index">
+    <button class="button-78 slide-in-bck-center" role="button"
+        routerLink="">{{topics[i].name}}</button>
+</span>
