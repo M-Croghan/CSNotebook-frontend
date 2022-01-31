@@ -3,15 +3,16 @@
         <img src="assets/img/csn-logo.png" alt="csn logo">
     </div>
     <div id="menu">
-        <button class="button-78" role="button">FREE TOPICS</button>
+        <a routerLink="topics"><button class="button-78" role="button">FREE TOPICS</button></a>
         <button class="button-78" role="button">MY TOPICS</button>
     </div>
     <div id="topics">
-        <h1>topics</h1>
+        <router-outlet></router-outlet>
     </div>
     <div id="empty">
         <h1>empty</h1>
     </div>
     
 </section>
+
 
