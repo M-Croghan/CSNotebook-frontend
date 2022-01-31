@@ -7,13 +7,13 @@
     display: grid;
     grid-row: 2;
     width: 85vw;
-    
+    height: 65vh;
 }
 
 #about-box{
+    display: grid;
     background-color: #00A676;
     padding: 5px;
-    
 }
 
 #about-text{
