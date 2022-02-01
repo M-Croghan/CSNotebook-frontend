@@ -44,22 +44,33 @@ export class OverviewComponent implements OnInit {
     let cardFace = document.getElementsByClassName('card-face');
     if (cardFace[0].innerHTML.startsWith('Q')){
       cardFace[0].innerHTML = `Answer: ${this.cards[this.cardIndex].answer}`;
-      console.log(cardFace[0].innerHTML);
     }
     else{
       cardFace[0].innerHTML = `Question: ${this.cards[this.cardIndex].question}`
-      console.log(cardFace[0].innerHTML);
-
     }
     
   }
 
   nextCard(){
-
+    let cardFace = document.getElementsByClassName('card-face');
+    if (this.cardIndex < this.cards.length - 1){
+      this.cardIndex++;
+    }
+    else{
+      this.cardIndex = 0;
+    }
+    cardFace[0].innerHTML = `Question: ${this.cards[this.cardIndex].question}`
   }
 
   previousCard(){
-
+    let cardFace = document.getElementsByClassName('card-face');
+    if (this.cardIndex > 0){
+      this.cardIndex--;
+    }
+    else{
+      this.cardIndex = this.cards.length - 1;
+    }
+    cardFace[0].innerHTML = `Question: ${this.cards[this.cardIndex].question}`
   }
 
 }

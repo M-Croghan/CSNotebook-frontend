@@ -12,4 +12,12 @@
     Question: {{cards[cardIndex].question}}
 </h1>
 
+<h1 class="card-count">
+    {{cardIndex + 1}} / {{cards.length}}
+</h1>
+
+<button class="button-78" role="button" (click)=previousCard()>LAST CARD</button>
+
 <button class="button-78" role="button" (click)=flipCard()>FLIP CARD</button>
+
+<button class="button-78" role="button" (click)=nextCard()>NEXT CARD</button>
