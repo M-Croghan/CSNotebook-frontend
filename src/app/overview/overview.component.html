@@ -1,23 +1,42 @@
-<h1 class="slide-in-bck-center">{{name}}</h1>
-
-<p class="slide-in-bck-center">
-    {{this.topic.description}}
-    <a href="https://www.google.com">test</a>
-    <a [href]="cards[0].link">LINK</a>
-</p>
+<div id="title">
+    <h1 class="slide-in-bck-center">{{name}}</h1>
+</div>
 
 
+<div id="description">
+    <h3 class="slide-in-bck-center">
+        {{this.topic.description}}
+    </h3>
+</div>
 
-<h1 class="card-face">
-    Question: {{cards[cardIndex].question}}
-</h1>
 
-<h1 class="card-count">
-    {{cardIndex + 1}} / {{cards.length}}
-</h1>
+<div id="card-info">
+    <h1 class="card-face">
+        Question: {{cards[cardIndex].question}}
+    </h1>
+    
+    <h1 class="card-count">
+        {{cardIndex + 1}} / {{cards.length}}
+    </h1>
 
-<button class="button-78" role="button" (click)=previousCard()>LAST CARD</button>
+    <h1 id="source">
+        <a [href]="cards[0].link">SOURCE</a>
+    </h1>
 
-<button class="button-78" role="button" (click)=flipCard()>FLIP CARD</button>
+    <h1 id="learn">
+        <a href="https://www.google.com/search?q={{cards[cardIndex].question}}" target="_blank">LEARN MORE</a>
+    </h1>
 
-<button class="button-78" role="button" (click)=nextCard()>NEXT CARD</button>
+    <button class="button-78" role="button" id="flip" (click)=flipCard() id="flip">FLIP CARD</button>
+</div>
+
+
+<div id="previous">
+    <button class="button-78" role="button" (click)=previousCard()>LAST CARD</button>
+</div>
+
+<div id="next">
+    <button class="button-78" role="button" id="next" (click)=nextCard()>NEXT CARD</button>
+</div>
+
+
