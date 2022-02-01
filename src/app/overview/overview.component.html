@@ -1,5 +1,5 @@
 <div id="title">
-    <h1 class="slide-in-bck-center">{{name}}</h1>
+    <h1 class="slide-in-bck-center" style="color: #00A676;">{{name}}</h1>
 </div>
 
 
@@ -10,24 +10,29 @@
 </div>
 
 
-<div id="card-info">
+<div id="card-info" class="slide-in-bck-center">
     <h1 class="card-face">
         Question: {{cards[cardIndex].question}}
     </h1>
     
-    <h1 class="card-count">
-        {{cardIndex + 1}} / {{cards.length}}
-    </h1>
+    <div class="card-count">
+        <h1>{{cardIndex + 1}} / {{cards.length}}</h1>
+    </div>
+    
 
-    <h1 id="source">
-        <a [href]="cards[0].link">SOURCE</a>
-    </h1>
+    <div id="source">
+        <h1 class="glow-on-hover"><a style="color: whitesmoke" [href]="cards[cardIndex].link" target="_blank">SOURCE</a></h1>
+    </div>
+    
+    <div id="learn">
+        <h1 class="glow-on-hover"><a style="color: whitesmoke" href="https://www.google.com/search?q={{name}} {{cards[cardIndex].question}}" target="_blank">LEARN MORE</a></h1>
+    </div>
 
-    <h1 id="learn">
-        <a href="https://www.google.com/search?q={{cards[cardIndex].question}}" target="_blank">LEARN MORE</a>
-    </h1>
-
-    <button class="button-78" role="button" id="flip" (click)=flipCard() id="flip">FLIP CARD</button>
+    
+    <div id="flip-div">
+        <button class="button-78" role="button" id="flip" (click)=flipCard() id="flip">FLIP CARD</button>
+    </div>
+    
 </div>
 
 
@@ -36,7 +41,18 @@
 </div>
 
 <div id="next">
-    <button class="button-78" role="button" id="next" (click)=nextCard()>NEXT CARD</button>
+    <button class="button-78" role="button" (click)=nextCard()>NEXT CARD</button>
 </div>
 
 
+<div id="add-card">
+    <button class="button-78" role="button" (click)=nextCard()>ADD CARD</button>
+</div>
+
+<div id="update-card">
+    <button class="button-78" role="button" (click)=nextCard()>UPDATE CARD</button>
+</div>
+
+<div id="delete-card">
+    <button class="button-78" role="button" (click)=nextCard()>DELETE CARD</button>
+</div>
