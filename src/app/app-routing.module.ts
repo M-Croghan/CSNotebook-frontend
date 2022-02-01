@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ExploreComponent } from './explore/explore.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { OverviewComponent } from './overview/overview.component';
 import { StudyComponent } from './study/study.component';
 import { TopicComponent } from './topic/topic.component';
 
@@ -32,6 +33,10 @@ const routes: Routes = [
       {
         path: 'topics',
         component: TopicComponent,
+      },
+      {
+        path: 'topics/:topicName',
+        component: OverviewComponent
       }
     ]
   }

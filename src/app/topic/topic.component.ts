@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CONNECTION } from 'src/connection';
+import { AppComponent } from '../app.component';
+
 
 @Component({
   selector: 'app-topic',
@@ -9,26 +11,24 @@ import { CONNECTION } from 'src/connection';
   styleUrls: ['./topic.component.css']
 })
 export class TopicComponent implements OnInit {
-  topics: any;
-  api = CONNECTION;
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  topicList: any;
+  public static numTopics: any = [];
+
+  constructor(private topics: AppComponent) { }
 
   ngOnInit(): void {
-    this.getTopics();
-    
-    console.log(this.topics)
+    this.generateTopicList();
   }
 
-  getTopics(){
-    this.http.get<any>(`${this.api}/api/topics`)
-      .subscribe((data) =>{
-        console.log(data);
-        this.topics = data;
-      });
+  generateTopicList(){
+    let allTopics = this.topics.grabTopics();
+    this.topicList = allTopics;
+    for(let i = 0; i < allTopics; i++){
+      TopicComponent.numTopics.push(i);
+    }
   }
 
-  printStuff(){
-    console.log(this.topics);
-  }
+
+  
 
 }

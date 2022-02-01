@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'csnotebook-frontend';
+  PUBLIC_TOPICS: any = [];
+
+  grabTopics(){
+    return this.PUBLIC_TOPICS;
+  }
+
+  setTopics(topics: any){
+    this.PUBLIC_TOPICS = topics;
+  }
+
 }
+

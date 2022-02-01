@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { StudyComponent } from './study/study.component';
 import { ExploreComponent } from './explore/explore.component';
 import { TopicComponent } from './topic/topic.component';
+import { OverviewComponent } from './overview/overview.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TopicComponent } from './topic/topic.component';
     LoginComponent,
     StudyComponent,
     ExploreComponent,
-    TopicComponent
+    TopicComponent,
+    OverviewComponent
   ],
   imports: [
     BrowserModule,
