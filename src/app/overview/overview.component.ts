@@ -22,9 +22,35 @@ export class OverviewComponent implements OnInit {
     
     this.getTopicInfo();
     
-    
-    
-    console.log(this.topic);
+    let topicLogo: any | null = document.querySelector('.topic-logo');
+    console.log(topicLogo.attributes[1].value)
+    if (this.name === 'JavaScript'){
+      topicLogo.attributes[1].value = "assets/img/card-logos/js.png"
+    }
+    else if (this.name.startsWith('C')){
+      topicLogo.attributes[1].value = "assets/img/card-logos/cs.png"
+    }
+    else if (this.name.startsWith('D')){
+      topicLogo.attributes[1].value = "assets/img/card-logos/pg.png"
+    }
+    else if (this.name.startsWith('H')){
+      topicLogo.attributes[1].value = "assets/img/card-logos/webdev.png"
+    }
+    else if (this.name === 'Java'){
+      topicLogo.attributes[1].value = "assets/img/card-logos/java.png"
+    }
+    else if (this.name.startsWith('S')){
+      topicLogo.attributes[1].value = "assets/img/card-logos/spring.png"
+    }
+    else if (this.name.startsWith('G')){
+      topicLogo.attributes[1].value = "assets/img/card-logos/git.png"
+    }
+    else if (this.name.startsWith('A')){
+      topicLogo.attributes[1].value = "assets/img/card-logos/angular.png"
+    }
+    else{
+      topicLogo.attributes[1].value = "assets/img/csn-logo.png"
+    }
   }
 
   getTopicInfo(){

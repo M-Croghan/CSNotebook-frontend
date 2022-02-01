@@ -18,6 +18,8 @@ export class TopicComponent implements OnInit {
 
   ngOnInit(): void {
     this.generateTopicList();
+    let topicLogo: any | null = document.querySelector('.topic-logo');
+    topicLogo.attributes[1].value = "assets/img/csn-logo.png"
   }
 
   generateTopicList(){
