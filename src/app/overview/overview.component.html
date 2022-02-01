@@ -8,7 +8,8 @@
 
 
 
-<h1>
-    {{cards[0].question}} || {{cards[0].link}}
+<h1 class="card-face">
+    Question: {{cards[cardIndex].question}}
 </h1>
 
+<button class="button-78" role="button" (click)=flipCard()>FLIP CARD</button>

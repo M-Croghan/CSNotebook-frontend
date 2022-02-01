@@ -14,6 +14,7 @@ export class OverviewComponent implements OnInit {
   name: any = '';
   cards: any = [];
   description: string = '';
+  cardIndex: number = 0;
 
   constructor(private route: ActivatedRoute, private topicList: AppComponent, private http: HttpClient) { }
 
@@ -37,6 +38,28 @@ export class OverviewComponent implements OnInit {
       this.cards.push(this.topic.cards[i]);
     }
     console.log(this.cards);
+  }
+
+  flipCard(){
+    let cardFace = document.getElementsByClassName('card-face');
+    if (cardFace[0].innerHTML.startsWith('Q')){
+      cardFace[0].innerHTML = `Answer: ${this.cards[this.cardIndex].answer}`;
+      console.log(cardFace[0].innerHTML);
+    }
+    else{
+      cardFace[0].innerHTML = `Question: ${this.cards[this.cardIndex].question}`
+      console.log(cardFace[0].innerHTML);
+
+    }
+    
+  }
+
+  nextCard(){
+
+  }
+
+  previousCard(){
+
   }
 
 }
