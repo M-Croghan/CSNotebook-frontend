@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CONNECTION } from 'src/connection';
 
 @Component({
   selector: 'app-login',
@@ -6,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  api = CONNECTION;
   email: string = '';
   password: string = '';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     document.querySelector('#execute')?.addEventListener('click', this.login);
@@ -20,10 +22,25 @@ export class LoginComponent implements OnInit {
 
   login(){
     console.log('LOGIN');
+
   }
 
   register(){
     console.log('REGISTER');
+    const headers = new HttpHeaders().append(
+      'Content-Type',
+      'application/json'
+    );
+
+    const body = JSON.stringify(
+      {
+        email: this.email,
+        password: this.password
+      }
+    )
+    
+      this.post(body, headers);
+    
   }
 
 
@@ -50,4 +67,12 @@ export class LoginComponent implements OnInit {
     console.log(button);
   }
 
+  post(b: any, h: any){
+    return this.http.post<any>(`${this.api}/auth/users/register`, b,
+    {
+      headers: h
+    })
+    .subscribe((res) => console.log(res));
+  }
+  
 }
