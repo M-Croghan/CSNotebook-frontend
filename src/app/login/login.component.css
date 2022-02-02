@@ -3,6 +3,28 @@
     grid-row: 2;
 }
 
-h1{
-    color: red;
+
+#login-container{
+    display: grid;
+    grid-row: 2;
+    width: 35vw;
+    height: 50vh;
+    background-color: #1B1E24;
+    border: 5px solid #00A676;
+}
+
+#login-btn{
+
+}
+
+#cancel-btn{
+
+}
+
+#email{
+
+}
+
+#password{
+    
 }
