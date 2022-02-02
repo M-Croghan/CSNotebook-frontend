@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  registeredUserInfo: any = {}
+  email: string = '';
+  password: string = '';
   constructor(private _auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
@@ -16,19 +17,27 @@ export class RegisterComponent implements OnInit {
 
 
   register(){
-    if (this.registeredUserInfo === undefined){
+    if (this.email.trim().length === 0 || this.password.trim().length === 0){
       alert('Username or password may not be empty!')
+      document.querySelector<any>('#box').value = '';
+      document.querySelector<any>('#text').value = '';
     }
     else{
-      this._auth.registerUser(this.registeredUserInfo).subscribe(
+      const registeredUserInfo = {
+        email: this.email,
+        password: this.password
+      }
+
+      this._auth.registerUser(registeredUserInfo).subscribe(
         res => {console.log(res);
+        localStorage.setItem('token', res.jwtToken);
         this.router.navigate(['/login']);
         alert("Your account has been created, please log in!")},
   
         error => {alert("This user already exists!"),
         console.log(error);
         document.querySelector<any>('#box').value = '';
-        document.querySelector<any>('#text').value = ''
+        document.querySelector<any>('#text').value = '';
         });
     }
     

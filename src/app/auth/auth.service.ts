@@ -12,9 +12,14 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-
+  // auth/users/register
   registerUser(user: any){
     return this.http.post<any>(this._registerUrl, user);
+  }
+
+  // auth/users/login
+  loginUser(user:any){
+    return this.http.post<any>(this._loginUrl, user);
   }
 
 
