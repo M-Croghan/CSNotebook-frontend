@@ -3,23 +3,23 @@
     <h1 id="login-lbl">LOGIN</h1>
     <div id="email">
         <span><h1 class="labels" id="user">E-Mail:</h1></span>
-        <span><input type="text" name="email" id="box"></span>
+        <span><input [(ngModel)]="email" type="text" name="email" id="box" required></span>
         
     </div>
     
     <div id="password">
         <span><h1 class="labels" id="pw">Password:</h1></span>
-        <span><input type="text" name="email" id="text"></span>
+        <span><input [(ngModel)]="password" type="password" name="email" id="text" required></span>
         
     </div>
     
     <div id="buttons">
-        <button class="button-78 login" role="button">LOGIN</button>
+        <button class="button-78 login" role="button" (click)=login() id="execute">LOGIN</button>
         <button class="button-78 cancel" role="button">CANCEL</button>
     </div>
     
     <div id="switch-mode">
-        <h2 class="glow-on-hover">New to CS Notebook? Register Here.</h2>
+        <h2 class="glow-on-hover" id="switch" (click)=swapLoginRegister()>New to CS Notebook? Register Here.</h2>
     </div>
 
 </div>

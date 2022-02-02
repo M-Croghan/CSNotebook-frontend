@@ -66,6 +66,7 @@ h1{
 
 #text{
     grid-column: 2;
+    -webkit-text-security: "circle"
 }
 
 #switch-mode{
