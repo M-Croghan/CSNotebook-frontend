@@ -16,42 +16,14 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    console.log('LOGIN')
+    console.log('LOGIN');
+    this._auth.testThis();
   }
 
-  register(){
-    // this._auth.registerUser(this.registeredUserInfo).subscribe(
-    //   res => {
-    //     console.log(res);
-    //   }
-    // )
-    
-    console.log('REGISTER')
-  }
+  
 
 
-  swapLoginRegister(){
-    let button = document.querySelector('#execute')
-    let heading = document.querySelector('#login-lbl')
-    let swapLabel = document.querySelector('#switch')
 
-    if (heading?.textContent === 'LOGIN' && swapLabel?.textContent != null && button?.textContent != null){
-      heading.textContent = 'REGISTER';
-      swapLabel.textContent = "Already a User? Click Here."
-      button.textContent = "REGISTER";
-      button.removeEventListener('click', this.login);
-      button.addEventListener('click', this.register);
-      
-    }
-    else if (heading?.textContent === 'REGISTER' && swapLabel?.textContent != null && button?.textContent != null){
-      heading.textContent = 'LOGIN';
-      swapLabel.textContent = "New to CS Notebook? Register Here."
-      button.textContent = "LOGIN";
-      button.removeEventListener('click', this.register);
-      button.addEventListener('click', this.login);
-    }
-    console.log(button);
-  }
 
   
 }

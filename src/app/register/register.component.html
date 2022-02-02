@@ -1,1 +1,24 @@
-<p>register works!</p>
+<div id="login-container" class="slide-in-top">
+    <h1 id="login-lbl">REGISTER NEW USER</h1>
+    <div id="email">
+        <span><h1 class="labels" id="user">E-Mail:</h1></span>
+        <span><input [(ngModel)]="registeredUserInfo.email" type="text" name="email" id="box" required></span>
+        
+    </div>
+    
+    <div id="password">
+        <span><h1 class="labels" id="pw">Password:</h1></span>
+        <span><input [(ngModel)]="registeredUserInfo.password" type="password" name="email" id="text" required></span>
+        
+    </div>
+    
+    <div id="buttons">
+        <button class="button-78 login" role="button" id="execute" (click)=register()>REGISTER</button>
+        <button [routerLink]="['/']" class="button-78 cancel" role="button">CANCEL</button>
+    </div>
+    
+    <div id="switch-mode">
+        <h2 class="glow-on-hover" id="switch" [routerLink]="['/login']">Already a User? Log In here.</h2>
+    </div>
+
+</div>

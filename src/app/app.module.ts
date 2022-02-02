@@ -11,7 +11,7 @@ import { StudyComponent } from './study/study.component';
 import { ExploreComponent } from './explore/explore.component';
 import { TopicComponent } from './topic/topic.component';
 import { OverviewComponent } from './overview/overview.component';
-import { AuthService } from './login/auth.service';
+import { AuthService } from './auth/auth.service';
 import { RegisterComponent } from './register/register.component';
 
 
@@ -36,7 +36,7 @@ import { RegisterComponent } from './register/register.component';
 
   ],
   providers: [
-    AuthService
+    AuthService,
   ],
   bootstrap: [AppComponent]
 })
