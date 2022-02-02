@@ -7,8 +7,7 @@ import { CONNECTION } from 'src/connection';
 })
 export class AuthService {
   api = CONNECTION;
-  private _registerUrl = 'http://localhost:9092/auth/users/register';
-  // `${this.api}/auth/users/register`
+  private _registerUrl = `${this.api}/auth/users/register`;
   private _loginUrl = `${this.api}/auth/users/login`
 
   constructor(private http: HttpClient) {}
@@ -19,9 +18,7 @@ export class AuthService {
   }
 
 
-  testThis(){
-    console.log("Am I Undefined?");
-  }
+
 
 }
   
