@@ -1,3 +1,4 @@
+import { registerLocaleData } from '@angular/common';
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
@@ -6,6 +7,7 @@ import { ExploreComponent } from './explore/explore.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { OverviewComponent } from './overview/overview.component';
+import { RegisterComponent } from './register/register.component';
 import { StudyComponent } from './study/study.component';
 import { TopicComponent } from './topic/topic.component';
 
@@ -21,6 +23,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
   {
     path: 'explore',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './auth.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,11 +12,11 @@ export class LoginComponent implements OnInit {
   constructor(private _auth: AuthService) {}
 
   ngOnInit(): void {
-    document.querySelector('#execute')?.addEventListener('click', this.login);
+    // document.querySelector('#execute')?.addEventListener('click', this.login);
   }
 
   login(){
-    
+    console.log('LOGIN')
   }
 
   register(){
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     //   }
     // )
     
-    this._auth.testThis();
+    console.log('REGISTER')
   }
 
 

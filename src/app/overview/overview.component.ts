@@ -15,8 +15,9 @@ export class OverviewComponent implements OnInit {
   cards: any = [];
   description: string = '';
   cardIndex: number = 0;
+  questionCheck: boolean = true;
 
-  constructor(private route: ActivatedRoute, private topicList: AppComponent, private http: HttpClient) { }
+  constructor(private route: ActivatedRoute, private topicList: AppComponent) { }
 
   ngOnInit(): void {
     
@@ -68,11 +69,13 @@ export class OverviewComponent implements OnInit {
 
   flipCard(){
     let cardFace = document.getElementsByClassName('card-face');
-    if (cardFace[0].innerHTML.startsWith('Q')){
+    if (this.questionCheck){
       cardFace[0].innerHTML = `Answer: ${this.cards[this.cardIndex].answer}`;
+      this.questionCheck = false;
     }
     else{
       cardFace[0].innerHTML = `Question: ${this.cards[this.cardIndex].question}`
+      this.questionCheck = true;
     }
     
   }
@@ -85,6 +88,7 @@ export class OverviewComponent implements OnInit {
     else{
       this.cardIndex = 0;
     }
+    this.questionCheck = true;
     cardFace[0].innerHTML = `Question: ${this.cards[this.cardIndex].question}`
   }
 
@@ -96,6 +100,7 @@ export class OverviewComponent implements OnInit {
     else{
       this.cardIndex = this.cards.length - 1;
     }
+    this.questionCheck = true;
     cardFace[0].innerHTML = `Question: ${this.cards[this.cardIndex].question}`
   }
 

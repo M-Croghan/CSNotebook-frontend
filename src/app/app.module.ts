@@ -12,6 +12,7 @@ import { ExploreComponent } from './explore/explore.component';
 import { TopicComponent } from './topic/topic.component';
 import { OverviewComponent } from './overview/overview.component';
 import { AuthService } from './login/auth.service';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -24,7 +25,8 @@ import { AuthService } from './login/auth.service';
     StudyComponent,
     ExploreComponent,
     TopicComponent,
-    OverviewComponent
+    OverviewComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
