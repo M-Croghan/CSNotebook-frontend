@@ -11,6 +11,8 @@ import { StudyComponent } from './study/study.component';
 import { ExploreComponent } from './explore/explore.component';
 import { TopicComponent } from './topic/topic.component';
 import { OverviewComponent } from './overview/overview.component';
+import { AuthService } from './login/auth.service';
+
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { OverviewComponent } from './overview/overview.component';
     FormsModule
 
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
