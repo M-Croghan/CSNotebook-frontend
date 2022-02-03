@@ -3,7 +3,8 @@
         <a routerLink=""><img class="logo" src="assets/img/csn.png" alt="..."></a>
     </span>
     <span id="login-link">
-        <a id="login-status" routerLink="login"><h1 id="login">LOGIN</h1></a>
+        <a *ngIf="loggedIn != null" id="login-status" routerLink=""><h1 id="login">LOG OUT</h1></a>
+        <a *ngIf="loggedIn === null" id="login-status" routerLink="login"><h1 id="login">LOG IN</h1></a>
     </span>
 </header>
 <router-outlet></router-outlet>

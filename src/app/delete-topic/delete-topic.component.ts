@@ -33,16 +33,18 @@ export class DeleteTopicComponent implements OnInit {
       );
     
     let deleteUrl = `${this._deleteTopicUrl}/${this.topicName}`
-
+    let checkDelete = confirm(`Do you wish to delete the topic: ${this.topicName}?`)
+    if (checkDelete === true){
       this.http.delete(deleteUrl, {headers: header}).subscribe(
         (res: any) => {console.log(res);
-          this.router.navigate(['/study/topics']);
+          alert(`Topic ${this.topicName} has been deleted!`)
+          this.router.navigate(['/study']);
         
           (error: any) => {alert("You must be logged in to delete! a topic!"),
           console.log(error);
           }}
       )
-      
+    }
   }
   }
 

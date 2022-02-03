@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CONNECTION } from 'src/connection';
 import { AppComponent } from '../app.component';
+import { HttpHeaders } from '@angular/common/http';
+import { CustomTopicsComponent } from '../custom-topics/custom-topics.component';
 
 @Component({
   selector: 'app-study',
@@ -13,6 +15,7 @@ export class StudyComponent implements OnInit {
   public static topics: any;
   api = CONNECTION;
   loggedIn = localStorage.getItem('token');
+  public static customTopics: any;
   
 
   constructor(private http: HttpClient, private topicList: AppComponent) { }
@@ -20,6 +23,10 @@ export class StudyComponent implements OnInit {
   ngOnInit(): void {
     this.getAllTopics();
     StudyComponent.topics = this.topicList.grabTopics();
+    StudyComponent.customTopics = this.topicList.grabCustom();
+    if (localStorage != null){
+      this.getCustomTopics();
+    }
   }
 
   getAllTopics(){
@@ -30,6 +37,22 @@ export class StudyComponent implements OnInit {
         console.log(data);
         this.topicList.setTopics(data);
       });
+    }
+  }
+
+  getCustomTopics(){
+    let check = this.topicList.grabCustom();
+    if (check.length != CustomTopicsComponent.numTopics || check.length === 0){
+      let header = new HttpHeaders().set(
+        "Authorization",
+        `Bearer ${this.loggedIn}`
+      );
+
+      this.http.get<any>(`${this.api}/api/topics/custom`, {headers: header})
+      .subscribe((data) => {
+        console.log(data);
+        this.topicList.setCustom(data);
+      })
     }
   }
 }

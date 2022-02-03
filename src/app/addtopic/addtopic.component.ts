@@ -43,7 +43,8 @@ export class AddtopicComponent implements OnInit {
 
       this.http.post<any>(this._addTopicUrl, body, {headers: header}).subscribe(
         (res: any) => {console.log(res);
-          this.router.navigate(['/study/topics']);
+          alert(`The topic "${this.topicName} has been created!`)
+          this.router.navigate(['/study']);
         
           (error: any) => {alert("You must be logged in to add a topic!"),
           console.log(error);

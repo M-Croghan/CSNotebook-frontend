@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'csnotebook-frontend';
   PUBLIC_TOPICS: any = [];
+  loggedIn = localStorage.getItem('token');
+  CUSTOM_TOPICS: any = []
 
   grabTopics(){
     return this.PUBLIC_TOPICS;
@@ -15,6 +17,14 @@ export class AppComponent {
 
   setTopics(topics: any){
     this.PUBLIC_TOPICS = topics;
+  }
+
+  grabCustom(){
+    return this.CUSTOM_TOPICS;
+  }
+
+  setCustom(topics: any){
+    this.CUSTOM_TOPICS = topics;
   }
 
 }

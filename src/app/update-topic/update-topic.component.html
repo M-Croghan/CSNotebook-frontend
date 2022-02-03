@@ -1,1 +1,21 @@
-<p>update-topic works!</p>
+<div id="topic-container">
+    <div id="info">
+        <h1 id="login-lbl" style="font-size: 40px;">UPDATE TOPIC</h1>
+    </div>
+
+    <div id="name">
+        <span><h1 class="labels" id="topic-lbl">Topic Name:</h1></span>
+        <span><input [(ngModel)]="topicName" type="text" name="email" id="topic-box" required></span>
+    </div>
+    
+    <div id="descrip">
+        <span><h1 class="labels" id="des-lbl">Topic Description:</h1></span>
+        <span><input [(ngModel)]="topicDescrip" type="text" name="email" id="des-box" required></span>
+    </div>
+
+    <div id="buttons">
+        <button class="button-78" role="button" id="b1" (click)="updateTopic()">UPDATE TOPIC</button>
+        <button class="button-78" role="button" id="b2" [routerLink]="['/study']">CANCEL </button>
+    </div>
+
+</div>

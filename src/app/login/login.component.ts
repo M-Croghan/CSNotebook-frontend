@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   constructor(private _auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {
-    // document.querySelector('#execute')?.addEventListener('click', this.login);
+    
   }
 
   login(){
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
         res => {console.log(res);
           localStorage.setItem('token', res.jwtToken);
           this.router.navigate(['/']);
-          document.querySelector<any>("#login").textContent = "LOGGED IN";
+          document.querySelector<any>("#login").textContent = "LOG OUT";
           document.querySelector<any>("#login-status").routerLink="null";
           document.querySelector<any>("#login-status").addEventListener('click', this.logout)
           alert("You're Logged In!")},
@@ -54,12 +54,13 @@ export class LoginComponent implements OnInit {
   }
 
   logout(){
-    let input = confirm('Are you sure you want to log out?');
-    if (input === true){
-      document.querySelector<any>("#login").textContent = "LOGIN";
-      localStorage.clear();
-      this.router.navigate(['/']);
-      window.location.reload();
+    if (localStorage.getItem('token') != null){
+      let input = confirm('Are you sure you want to log out?');
+      if (input === true){
+        document.querySelector<any>("#login").textContent = "LOGIN";
+        localStorage.clear();
+        console.log(document.querySelector<any>("#login-status"));
+      }
       
     }
     
