@@ -13,6 +13,7 @@ export class StudyComponent implements OnInit {
   public static topics: any;
   api = CONNECTION;
   loggedIn = localStorage.getItem('token');
+  
 
   constructor(private http: HttpClient, private topicList: AppComponent) { }
 

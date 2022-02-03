@@ -14,6 +14,9 @@ import { OverviewComponent } from './overview/overview.component';
 import { AuthService } from './auth/auth.service';
 import { RegisterComponent } from './register/register.component';
 import { AddtopicComponent } from './addtopic/addtopic.component';
+import { DeleteTopicComponent } from './delete-topic/delete-topic.component';
+import { UpdateTopicComponent } from './update-topic/update-topic.component';
+import { CustomTopicsComponent } from './custom-topics/custom-topics.component';
 
 
 
@@ -28,7 +31,10 @@ import { AddtopicComponent } from './addtopic/addtopic.component';
     TopicComponent,
     OverviewComponent,
     RegisterComponent,
-    AddtopicComponent
+    AddtopicComponent,
+    DeleteTopicComponent,
+    UpdateTopicComponent,
+    CustomTopicsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,16 @@
+<div id="topic-container">
+    <div id="info">
+        <h1 id="login-lbl" style="font-size: 40px;">DELETE TOPIC</h1>
+    </div>
+
+    <div id="name">
+        <span><h1 class="labels" id="topic-lbl">Enter the topic name to delete:</h1></span>
+        <span><input [(ngModel)]="topicName" type="text" name="email" id="topic-box" required></span>
+    </div>
+
+    <div id="buttons">
+        <button class="button-78" role="button" id="b1" (click)="deleteTopic()">DELETE TOPIC</button>
+        <button class="button-78" role="button" id="b2" [routerLink]="['/study']">CANCEL </button>
+    </div>
+
+</div>

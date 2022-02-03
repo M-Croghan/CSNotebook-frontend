@@ -7,7 +7,7 @@
         <button *ngIf="loggedIn != null" class="button-78" role="button">MY TOPICS</button>
         <button *ngIf="loggedIn != null" class="button-78" role="button" [routerLink]="['/study/addTopic']">ADD TOPIC</button>
         <button *ngIf="loggedIn != null" class="button-78" role="button">UPDATE TOPIC</button>
-        <button *ngIf="loggedIn != null" class="button-78" role="button">DELETE TOPIC</button>
+        <button *ngIf="loggedIn != null" class="button-78" role="button" [routerLink]="['/study/deleteTopic']">DELETE TOPIC</button>
     </div>
     <div id="topics">
         <router-outlet></router-outlet>

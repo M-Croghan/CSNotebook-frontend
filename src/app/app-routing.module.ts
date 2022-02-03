@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { StudyComponent } from './study/study.component';
 import { TopicComponent } from './topic/topic.component';
 import { AddtopicComponent } from './addtopic/addtopic.component';
+import { DeleteTopicComponent } from './delete-topic/delete-topic.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,10 @@ const routes: Routes = [
         path: 'addTopic',
         component: AddtopicComponent
       },
+      {
+        path: 'deleteTopic',
+        component: DeleteTopicComponent
+      }
     ]
   },
   

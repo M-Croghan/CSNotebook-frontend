@@ -18,7 +18,7 @@ export class AddtopicComponent implements OnInit {
   private _addTopicUrl = `${this.api}/api/topics`;
   token = localStorage.getItem("token");
 
-  constructor(private _auth: AuthService, private router: Router, private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
   }
