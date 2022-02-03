@@ -60,6 +60,7 @@ export class LoginComponent implements OnInit {
         document.querySelector<any>("#login").textContent = "LOGIN";
         localStorage.clear();
         console.log(document.querySelector<any>("#login-status"));
+        
       }
       
     }
