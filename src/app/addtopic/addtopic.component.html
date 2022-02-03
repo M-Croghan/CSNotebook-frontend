@@ -1,1 +1,21 @@
-<h1>TESSSST</h1>
+<div id="topic-container">
+    <div id="info">
+        <h1 id="login-lbl" style="font-size: 40px;">ADD TOPIC</h1>
+    </div>
+
+    <div id="name">
+        <span><h1 class="labels" id="topic-lbl">Topic Name:</h1></span>
+        <span><input [(ngModel)]="topicName" type="text" name="email" id="topic-box" required></span>
+    </div>
+    
+    <div id="descrip">
+        <span><h1 class="labels" id="des-lbl">Topic Description:</h1></span>
+        <span><input [(ngModel)]="topicDescrip" type="text" name="email" id="des-box" required></span>
+    </div>
+
+    <div id="buttons">
+        <button class="button-78" role="button" id="b1" (click)="addTopic()">ADD TOPIC</button>
+        <button class="button-78" role="button" id="b2">CANCEL </button>
+    </div>
+
+</div>

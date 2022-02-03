@@ -8,7 +8,8 @@ import { CONNECTION } from 'src/connection';
 export class AuthService {
   api = CONNECTION;
   private _registerUrl = `${this.api}/auth/users/register`;
-  private _loginUrl = `${this.api}/auth/users/login`
+  private _loginUrl = `${this.api}/auth/users/login`;
+  
 
   constructor(private http: HttpClient) {}
 
@@ -20,11 +21,6 @@ export class AuthService {
   // auth/users/login
   loginUser(user:any){
     return this.http.post<any>(this._loginUrl, user);
-  }
-
-  // Returns true / false if token exists
-  loggedIn(){
-    return !!localStorage.getItem('token')
   }
 
 

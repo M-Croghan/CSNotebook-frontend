@@ -13,7 +13,6 @@ import { TopicComponent } from './topic/topic.component';
 import { OverviewComponent } from './overview/overview.component';
 import { AuthService } from './auth/auth.service';
 import { RegisterComponent } from './register/register.component';
-import { AuthGuard } from './auth/auth.guard';
 import { AddtopicComponent } from './addtopic/addtopic.component';
 
 
@@ -39,7 +38,7 @@ import { AddtopicComponent } from './addtopic/addtopic.component';
 
   ],
   providers: [
-    AuthService, AuthGuard
+    AuthService,
   ],
   bootstrap: [AppComponent]
 })

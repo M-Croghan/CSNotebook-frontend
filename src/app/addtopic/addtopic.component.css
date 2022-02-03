@@ -1,3 +1,63 @@
-h1{
-    color: red;
+
+
+:host{
+    display: grid;
+    grid-row: 1;
+    
+}
+
+#topic-container{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4, 25%);
+    place-items: center;
+}
+
+#info{
+    grid-row: 1;
+}
+
+#name{
+    display: grid;
+    grid-row: 2;
+    grid-template-columns: repeat(2, 50%);
+    width: 20%;
+    place-items: center;
+}
+
+
+#descrip{
+    display: grid;
+    grid-row: 3;
+    grid-template-columns: repeat(2, 50%);
+    width: 20%;
+    place-items: center;
+}
+
+#buttons{
+    display: grid;
+    grid-row: 4;
+    grid-template-columns: repeat(2, 50%);
+    width: 50%;
+    place-items: center;
+}
+
+#topic-lbl{
+    grid-column: 1;
+}
+
+#topic-box{
+    grid-column: 2;
+}
+
+#des-lbl{
+    grid-column: 1;
+}
+
+#des-box{
+    grid-column: 2;
+}
+
+#b2{
+    grid-column: 2;
 }
