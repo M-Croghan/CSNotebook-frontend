@@ -12,6 +12,8 @@ import { StudyComponent } from './study/study.component';
 import { TopicComponent } from './topic/topic.component';
 import { AddtopicComponent } from './addtopic/addtopic.component';
 import { DeleteTopicComponent } from './delete-topic/delete-topic.component';
+import { CustomTopicsComponent } from './custom-topics/custom-topics.component';
+import { UpdateTopicComponent } from './update-topic/update-topic.component';
 
 const routes: Routes = [
   {
@@ -54,6 +56,14 @@ const routes: Routes = [
       {
         path: 'deleteTopic',
         component: DeleteTopicComponent
+      },
+      {
+        path: 'myTopics',
+        component: CustomTopicsComponent
+      },
+      {
+        path: 'updateTopic',
+        component: UpdateTopicComponent
       }
     ]
   },

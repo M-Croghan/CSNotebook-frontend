@@ -4,9 +4,9 @@
     </div>
     <div id="menu">
         <a routerLink="topics"><button class="button-78" role="button">FREE TOPICS</button></a>
-        <button *ngIf="loggedIn != null" class="button-78" role="button">MY TOPICS</button>
+        <button *ngIf="loggedIn != null" class="button-78" role="button" [routerLink]="['/study/myTopics']">MY TOPICS</button>
         <button *ngIf="loggedIn != null" class="button-78" role="button" [routerLink]="['/study/addTopic']">ADD TOPIC</button>
-        <button *ngIf="loggedIn != null" class="button-78" role="button">UPDATE TOPIC</button>
+        <button *ngIf="loggedIn != null" class="button-78" role="button" [routerLink]="['/study/updateTopic']">UPDATE TOPIC</button>
         <button *ngIf="loggedIn != null" class="button-78" role="button" [routerLink]="['/study/deleteTopic']">DELETE TOPIC</button>
     </div>
     <div id="topics">
