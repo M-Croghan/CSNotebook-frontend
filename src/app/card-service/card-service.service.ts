@@ -24,7 +24,9 @@ loggedIn = localStorage.getItem('token');
       (res: any) => {
         console.log(res);
         alert(`Selected card in the ${topicName} category has been deleted!`)
-        this.route.navigate(['/study/myTopics']);
+        this.route.navigate(['/'], {skipLocationChange: true}).then(() =>{
+          this.route.navigate([`/study/myTopics/`]);
+        });
       },
       (err :any) => {
         console.log(err);
@@ -43,24 +45,36 @@ loggedIn = localStorage.getItem('token');
     let answer = prompt("Enter an answer for the card:");
     let link = prompt("Enter a source link for the card:")
 
-    const body = {
-      question: question,
-      answer: answer,
-      link: link
+    if ( question === null || answer === null || link === null){
+      alert("A card cannot have empty fields!")
     }
+    else{
 
-    this.http.post<any>(`${this.api}/api/topics/${topicName}/cards`, body, {headers: header}).subscribe(
-      (res: any) => {
-        console.log(res);
-        alert(`New card created in ${topicName} category!`)
-        this.route.navigate(['']);
-      },
-      (err :any) => {
-        console.log(err);
-        alert("That card has already been completed!")
+      const body = {
+        question: question,
+        answer: answer,
+        link: link
       }
 
-    )
+      this.http.post<any>(`${this.api}/api/topics/${topicName}/cards`, body, {headers: header}).subscribe(
+        (res: any) => {
+          console.log(res);
+          this.route.navigateByUrl('/', {skipLocationChange: true}).then(() =>{
+            this.route.navigate([`/study/myTopics/`]);
+          });
+          alert(`New card created in ${topicName} category!`)
+          
+        },
+        (err :any) => {
+          console.log(err);
+          alert("That card has already been completed!")
+        }
+  
+      )
+    }
+    
+
+    
   }
 
   update(topicName: any, q: any){
@@ -69,28 +83,37 @@ loggedIn = localStorage.getItem('token');
       `Bearer ${this.loggedIn}`
     );
 
-    let question = prompt("Enter a question for the card:");
+    
     let answer = prompt("Enter an answer for the card:");
     let link = prompt("Enter a source link for the card:")
 
     const body = {
-      question: question,
+      question: q,
       answer: answer,
       link: link
     }
 
-    this.http.put<any>(`${this.api}/api/topics/${topicName}/cards/${q}`, body, {headers: header}).subscribe(
-      (res: any) => {
-        console.log(res);
-        alert(`New card created in ${topicName} category!`)
-        this.route.navigate(['/study/myTopics']);
-      },
-      (err :any) => {
-        console.log(err);
-        alert("That card has already been completed!")
-      }
-
-    )
+    
+    if (answer === null || link === null){
+      alert("A card cannot have empty fields!")
+    }
+    else{
+      this.http.put<any>(`${this.api}/api/topics/${topicName}/cards/${q}`, body, {headers: header}).subscribe(
+        (res: any) => {
+          console.log(res);
+          alert(`New card created in ${topicName} category!`)
+          this.route.navigateByUrl('/', {skipLocationChange: true}).then(() =>{
+            this.route.navigate([`/study/myTopics/`]);
+          });
+        },
+        (err :any) => {
+          console.log(err);
+          alert("That card has already been completed!")
+        }
+  
+      )
+    }
+    
   }
 
 }

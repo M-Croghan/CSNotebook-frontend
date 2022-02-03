@@ -38,8 +38,10 @@ export class DeleteTopicComponent implements OnInit {
       this.http.delete(deleteUrl, {headers: header}).subscribe(
         (res: any) => { 
           console.log(res);
-          alert(`The topic "${this.topicName} has been updated!`)
-          this.router.navigate(['/study'])
+          alert(`The topic "${this.topicName} has been deleted!`)
+          this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>{
+            this.router.navigate([`/study`]);
+          });
         },
         (error: any) => 
           {alert("You have entered an invalid topic to delete!"),

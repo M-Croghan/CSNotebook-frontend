@@ -43,7 +43,9 @@ export class UpdateTopicComponent implements OnInit {
         (res: any) => { 
           console.log(res);
           alert(`The topic "${this.topicName} has been updated!`)
-          this.router.navigate(['/study'])
+          this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>{
+            this.router.navigate([`/study/myTopics/`]);
+          });
         },
         (error: any) => 
           {alert("You have entered an invalid topic to update!"),

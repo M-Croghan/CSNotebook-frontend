@@ -6,6 +6,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 
 
+
 @Component({
   selector: 'app-addtopic',
   templateUrl: './addtopic.component.html',
@@ -18,7 +19,7 @@ export class AddtopicComponent implements OnInit {
   private _addTopicUrl = `${this.api}/api/topics`;
   token = localStorage.getItem("token");
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient, private route: Router) { }
 
   ngOnInit(): void {
   }
@@ -44,7 +45,9 @@ export class AddtopicComponent implements OnInit {
       this.http.post<any>(this._addTopicUrl, body, {headers: header}).subscribe(
         (res: any) => {console.log(res);
           alert(`The topic "${this.topicName} has been created!`)
-          this.router.navigate(['/study']);
+          this.route.navigateByUrl('/', {skipLocationChange: true}).then(() =>{
+            this.route.navigate([`/study`]);
+          });
         
           (error: any) => {alert("You must be logged in to add a topic!"),
           console.log(error);
