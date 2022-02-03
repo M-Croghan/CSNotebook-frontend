@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { AppComponent } from '../app.component';
+import { CardServiceService } from '../card-service/card-service.service';
+import { StudyComponent } from '../study/study.component';
 
 @Component({
   selector: 'app-custom-overview',
@@ -17,7 +19,8 @@ export class CustomOverviewComponent implements OnInit {
   questionCheck: boolean = true;
   loggedIn = localStorage.getItem('token');
 
-  constructor(private route: ActivatedRoute, private topicList: AppComponent) { }
+  constructor(private route: ActivatedRoute, private topicList: AppComponent, 
+    private reInitTopic: StudyComponent, private cardManipulator: CardServiceService) { }
   
 
   ngOnInit(): void {
@@ -76,7 +79,23 @@ export class CustomOverviewComponent implements OnInit {
     cardFace[0].innerHTML = `Question: ${this.cards[this.cardIndex].question}`
   }
 
+  addCard(){
+    this.cardManipulator.addCard(this.name);
+    this.reInitTopic.ngOnInit();
+  }
 
 
+  deleteCurrentCard(){
+    let check = confirm("Do you want to delete the current card?");
+    if (check === true){
+      this.cardManipulator.deleteCard(this.name, this.cards[this.cardIndex].question);
+      this.getCustomTopics();
+    }
+    
+  }
+
+  updateCard(){
+    this.cardManipulator.update(this.name, this.cards[this.cardIndex].question);
+  }
 
 }

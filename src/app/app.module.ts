@@ -18,6 +18,8 @@ import { DeleteTopicComponent } from './delete-topic/delete-topic.component';
 import { UpdateTopicComponent } from './update-topic/update-topic.component';
 import { CustomTopicsComponent } from './custom-topics/custom-topics.component';
 import { CustomOverviewComponent } from './custom-overview/custom-overview.component';
+import { AddCardComponent } from './add-card/add-card.component';
+import { UpdateCardComponent } from './update-card/update-card.component';
 
 
 
@@ -36,7 +38,9 @@ import { CustomOverviewComponent } from './custom-overview/custom-overview.compo
     DeleteTopicComponent,
     UpdateTopicComponent,
     CustomTopicsComponent,
-    CustomOverviewComponent
+    CustomOverviewComponent,
+    AddCardComponent,
+    UpdateCardComponent
   ],
   imports: [
     BrowserModule,
