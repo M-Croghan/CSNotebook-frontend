@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CONNECTION } from 'src/connection';
 import { AppComponent } from '../app.component';
@@ -13,6 +12,7 @@ export class StudyComponent implements OnInit {
   static gatheredTopics: any;
   public static topics: any;
   api = CONNECTION;
+  loggedIn = localStorage.getItem('token');
 
   constructor(private http: HttpClient, private topicList: AppComponent) { }
 

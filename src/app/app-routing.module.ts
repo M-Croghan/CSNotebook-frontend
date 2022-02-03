@@ -10,6 +10,7 @@ import { OverviewComponent } from './overview/overview.component';
 import { RegisterComponent } from './register/register.component';
 import { StudyComponent } from './study/study.component';
 import { TopicComponent } from './topic/topic.component';
+import { AddtopicComponent } from './addtopic/addtopic.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,7 @@ const routes: Routes = [
     path: 'explore',
     component: ExploreComponent
   },
+  
   {
     path: 'study',
     component: StudyComponent,
@@ -43,9 +45,14 @@ const routes: Routes = [
       {
         path: 'topics/:topicName',
         component: OverviewComponent
-      }
+      },
+      {
+        path: 'addTopic',
+        component: AddtopicComponent
+      },
     ]
-  }
+  },
+  
 ];
 
 @NgModule({

@@ -22,7 +22,10 @@ export class AuthService {
     return this.http.post<any>(this._loginUrl, user);
   }
 
-
+  // Returns true / false if token exists
+  loggedIn(){
+    return !!localStorage.getItem('token')
+  }
 
 
 }
