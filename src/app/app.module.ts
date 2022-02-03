@@ -17,6 +17,7 @@ import { AddtopicComponent } from './addtopic/addtopic.component';
 import { DeleteTopicComponent } from './delete-topic/delete-topic.component';
 import { UpdateTopicComponent } from './update-topic/update-topic.component';
 import { CustomTopicsComponent } from './custom-topics/custom-topics.component';
+import { CustomOverviewComponent } from './custom-overview/custom-overview.component';
 
 
 
@@ -34,7 +35,8 @@ import { CustomTopicsComponent } from './custom-topics/custom-topics.component';
     AddtopicComponent,
     DeleteTopicComponent,
     UpdateTopicComponent,
-    CustomTopicsComponent
+    CustomTopicsComponent,
+    CustomOverviewComponent
   ],
   imports: [
     BrowserModule,

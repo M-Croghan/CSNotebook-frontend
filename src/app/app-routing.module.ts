@@ -14,6 +14,7 @@ import { AddtopicComponent } from './addtopic/addtopic.component';
 import { DeleteTopicComponent } from './delete-topic/delete-topic.component';
 import { CustomTopicsComponent } from './custom-topics/custom-topics.component';
 import { UpdateTopicComponent } from './update-topic/update-topic.component';
+import { CustomOverviewComponent } from './custom-overview/custom-overview.component';
 
 const routes: Routes = [
   {
@@ -60,6 +61,10 @@ const routes: Routes = [
       {
         path: 'myTopics',
         component: CustomTopicsComponent
+      },
+      {
+        path: 'myTopics/:customTopicName',
+        component: CustomOverviewComponent
       },
       {
         path: 'updateTopic',

@@ -38,19 +38,21 @@ export class UpdateTopicComponent implements OnInit {
         `Bearer ${this.token}`
       );
 
-
-      this.http.put<any>(`${this._updateTopicUrl}${this.topicName}`, body, {headers: header}).subscribe(
-        (res: any) => {console.log(res);
-          alert(`The topic "${this.topicName} has been updates!`)
-          this.router.navigate(['/study']);
-        
-          (error: any) => {alert("You must be logged in to add a topic!"),
-          console.log(error);
-          }}
-      )
       
+      this.http.put<any>(`${this._updateTopicUrl}${this.topicName}`, body, {headers: header}).subscribe(
+        (res: any) => { 
+          console.log(res);
+          alert(`The topic "${this.topicName} has been updated!`)
+          this.router.navigate(['/study'])
+        },
+        (error: any) => 
+          {alert("You have entered an invalid topic to update!"),
+          console.log(error);
+          }
+      );
+    }     
   }
 
 }
-}
+
 
