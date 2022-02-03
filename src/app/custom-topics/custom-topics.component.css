@@ -6,7 +6,9 @@ h1{
 :host{
     display: grid;
     grid-row: 1;
-    height: 400px;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(5, 20%);
+    padding: 5px;
 }
 
 #flip{
