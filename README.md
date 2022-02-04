@@ -1,9 +1,9 @@
 # CS NOTEBOOK (FRONTEND)
 
-<span><img src="src/assets/img/csn.png" alt="cs logo" width="40%"></span>
+<span><img src="src/assets/img/csn.png" alt="cs logo" width="55%"></span>
 
 ## :book: INTRODUCTION :book:
-<span><img src="src/assets/img/rm/homescreen.png" alt="cs logo" width="40%"> </span>  
+<span><img src="src/assets/img/rm/homescreen.png" alt="cs logo" width="55%"> </span>  
 This repository hosts the source code for the front-end of the CS Notebook Project. CS Notebook is a learning resource & study platform for users to hone their skills and understanding of the many disciplines within the field of computer science. Whether you're a professional gearing up for an important interview, or a student looking to develop your understanding of complex topics, CS Notebook is dedicated to providing free and accessible education for all.
 
 
