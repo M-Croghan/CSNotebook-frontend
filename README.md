@@ -22,3 +22,6 @@ This repository hosts the source code for the front-end of the CS Notebook Proje
 ## :chart_with_upwards_trend: WIREFRAMES :chart_with_upwards_trend:
 <span><img src="src/assets/img/rm/homepage.png" alt="home page wireframe" width="40%"></span>
 <span><img src="src/assets/img/rm/cardpage.png" alt="card page wrieframe" width="40.3%"></span>
+
+# :scroll: USER STORIES :scroll:
+<span><img src="src/assets/img/rm/userstories.png" alt="card page wireframe" width="80%"></span>
